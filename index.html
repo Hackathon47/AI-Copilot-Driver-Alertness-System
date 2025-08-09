@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Co-Pilot – Driver Alertness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="sci-fi-loader">
+  <div class="hud-container">
+    <div class="scanline"></div>
+    <div class="grid-overlay"></div>
+    <div class="hud-text">
+      <div class="loading-line">INITIALIZING AI COPILOT SYSTEM...</div>
+      <div class="loading-line">LOADING DROWSINESS DETECTION MODULE <span class="loading-dots">.</span></div>
+      <div class="loading-line">CALIBRATING FACE MESH SENSORS <span class="loading-dots">.</span></div>
+      <div class="loading-line">ACTIVATING NEURAL NETWORK <span class="loading-dots">.</span></div>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </div>
+    <div class="hud-radar">
+      <div class="radar-sweep"></div>
+    </div>
+  </div>
+</div>
+
+<canvas id="ripple-canvas"></canvas>
+
+  <header>
+    <h1>🚗 AI Co-Pilot – Driver Alertness Monitor</h1>
+    <button id="modeToggle">🌙 Night Mode</button>
+  </header>
+  
+  
+
+  <main>
+    <div class="video-container" id="videoCard">
+      <canvas id="outputCanvas"></canvas>
+      <video id="inputVideo" autoplay playsinline muted></video>
+    </div>
+
+    <div class="stats-container">
+      <div>Blinks: <span id="blinkCount">0</span></div>
+      <div>Yawns: <span id="yawnCount">0</span></div>
+      <div>Avg Blink Duration: <span id="avgBlink">0 ms</span></div>
+      <div>Alertness Score: <span id="alertnessScore">100%</span></div>
+    </div>
+
+    <div class="log-container">
+      <h2>📜 Event Log</h2>
+      <table id="eventLog">
+        <thead>
+          <tr><th>Time</th><th>Event</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+<!-- Add this near your existing alert sound -->
+<audio id="beepSound" src="alert.mp3" preload="auto"></audio>
+  <audio id="alertSound" src="alert.mp3" preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
